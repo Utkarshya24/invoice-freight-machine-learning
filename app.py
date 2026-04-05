@@ -38,8 +38,8 @@ def load_invoice_model_and_scaler(
 
 def predict_freight_cost(model, dollars: float) -> float:
     input_df = pd.DataFrame({"Dollars": [dollars]})
-    prediction = model.predict(input_df)[0]
-    return float(prediction)
+    prediction = model.predict(input_df)
+    return float(np.asarray(prediction).reshape(-1)[0])
 
 
 def predict_invoice_flag(model, scaler, payload: dict) -> Tuple[int, float]:
