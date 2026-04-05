@@ -55,6 +55,12 @@ source .venv/bin/activate
 pip install pandas numpy scikit-learn joblib streamlit
 ```
 
+Or install from file:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Data Source
 
 - SQLite DB: `data/inventory.db`
@@ -172,6 +178,15 @@ streamlit run app.py
 ```
 
 Then open the URL printed in terminal (usually `http://localhost:8501`).
+
+### Streamlit Cloud Deployment
+
+- Ensure `requirements.txt` is present at repo root (already added).
+- Ensure `runtime.txt` is present at repo root (already added, `python-3.11`).
+- In Streamlit Cloud app settings:
+  - Repository: this repo
+  - Branch: `master`
+  - Main file path: `app.py`
 
 ## End-to-End Workflow
 
